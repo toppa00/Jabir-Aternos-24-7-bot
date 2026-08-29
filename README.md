@@ -1,47 +1,31 @@
-# 🤖 Aternos 24/7 Hosting Bot
+# Fixed Aternos AFK Bot
 
-A Minecraft bot that helps keep an Aternos server online 24/7 by automatically joining it using a Mineflayer-based bot. Perfect for SMPs or small multiplayer servers that shut down when no players are online.
+This is a cleaned replacement for the broken `index.js` shown in the Railway logs.
 
----
+## Railway
 
-## ✨ Features
-*   ✅ **Auto-Connect**: Automatically joins your server.
-*   ✅ **Infinite Uptime**: Prevents AFK kicks and server shutdowns.
-*   ✅ **Smart Reconnect**: Automatically reconnects if the internet drops or server restarts.
-*   ✅ **Railway-Ready**: Includes "Self-Ping" to run 24/7 for FREE on Railway.com.
-*   ✅ **Plugin Support**: Compatible with Paper/Spigot/Bukkit (auto-auth included).
+- Build command: `npm install`
+- Start command: `npm start`
+- No custom PORT is required; Railway supplies `PORT`.
 
----
+## Configure
 
-## 🛠️ Requirements
-*   **GitHub Account**
-*   **Aternos Server**
-*   **Railway Account** (for 24/7 hosting)
-*   **Common Sense!** 🧠        
+Edit `settings.json`:
 
----
+- `bot-account.username`
+- `server.ip`
+- `server.port`
+- `server.version`
+- `utils.auto-auth.password`
 
-## 🚀 Setup Guide
+For Discord notifications, set the Railway variable:
 
-We have made setup super easy! Check out the guide below:
+`DISCORD_WEBHOOK_URL`
 
-[**Detailed Google Doc Guide**](https://docs.google.com/document/d/1Fl0dRzP6O30ehp5-QcaB11IobF8I1JJhKUipzCWiCYA/edit?tab=t.0).
+Do not put a Discord webhook URL directly in GitHub.
 
----
+## Important
 
-## ⚙️ Usage
-*   **Start**: Just turn on your Aternos server. The bot will join automatically.
-*   **Status**: Visit the Railway URL to see a status dashboard.
-*   **Chat**: The bot logs chat to the console.
+The bot uses `auth: "offline"`, so it is intended for a server configured to allow offline/cracked accounts. An online-mode server requires a different authentication setup.
 
----
-
-## ⚠️ Disclaimer
-This project is not affiliated with Aternos, Mojang, or Microsoft. Use at your own risk. Misuse may violate platform terms of service. This bot does not bypass Aternos queue limits; it only keeps the server active once it is online.
-
----
-
-## ❤️ Credits
-* Developed and maintained by Perzaan Gaming.
-
-**License**: MIT License
+The dashboard is available at `/` and the health endpoint at `/health`.
